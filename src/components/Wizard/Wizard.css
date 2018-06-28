@@ -6,6 +6,14 @@
   height: 60vh;
 }
 
+.form2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40vw;
+  height: 15vh;
+}
+
 .wizard {
   display: flex;
   flex-direction: column;
