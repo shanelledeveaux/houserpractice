@@ -1,5 +1,28 @@
 .App {
   text-align: center;
+  font-family: "Poiret One", cursive;
+  font-size: 20px;
+  color: rgb(232, 196, 159);
+  background-color: rgb(138, 105, 232);
+  height: 100vh;
+}
+
+button {
+  background-color: rgb(56, 0, 75);
+  font-family: "Poiret One", cursive;
+  font-size: 20px;
+  color: rgb(232, 196, 159);
+  border-color: rgb(90, 1, 119);
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(232, 196, 159);
+  text-align: center;
+  font-family: "Poiret One", cursive;
+  font-size: 20px;
+  color: rgb(232, 196, 159);
 }
 
 .App-logo {
@@ -23,6 +46,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

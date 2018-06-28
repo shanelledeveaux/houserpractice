@@ -1,7 +1,8 @@
 import React from "react";
+import "./Header.css";
 
-var Header = () => {
-  return <div>Header</div>;
+const Header = props => {
+  return <div className="main">Houser</div>;
 };
 
 export default Header;

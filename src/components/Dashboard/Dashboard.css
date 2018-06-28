@@ -1,0 +1,21 @@
+.dashtitle {
+  /* height: 5vh; */
+  width: 40vw;
+  padding: 5%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 40px;
+  border-bottom: 1px solid rgba(56, 0, 75, 0.61);
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homebox {
+  overflow: scroll;
+  height: 70vh;
+}

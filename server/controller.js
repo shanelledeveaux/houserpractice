@@ -2,7 +2,6 @@ const axios = require("axios");
 
 const getHouses = (req, res, next) => {
   const dbInstance = req.app.get("db");
-  const { inventory } = req.body;
 
   dbInstance
     .get_houses()
@@ -10,6 +9,29 @@ const getHouses = (req, res, next) => {
     .catch(console.log);
 };
 
+const addHouse = (req, res, next) => {
+  const dbInstance = req.app.get("db");
+  const { name, address, city, userState, zipcode } = req.body;
+  // console.log(req.body);
+
+  dbInstance
+    .add_house([name, address, city, userState, zipcode])
+    .then(response => res.status(200).send(response))
+    .catch(console.log);
+};
+
+const deleteHouse = (req, res, next) => {
+  const dbInstance = req.app.get("db");
+  const { id } = req.params;
+
+  dbInstance
+    .delete_house([id])
+    .then(response => res.status(200).send(response))
+    .catch(console.log);
+};
+
 module.exports = {
-  getHouses
+  getHouses,
+  addHouse,
+  deleteHouse
 };

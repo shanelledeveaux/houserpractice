@@ -1,0 +1,9 @@
+.main {
+  background-color: rgb(56, 0, 75);
+  height: 5vh;
+  padding-top: 2%;
+  padding-left: 3%;
+  color: rgb(232, 196, 159);
+  display: flex;
+  align-content: flex-start;
+}

@@ -12,6 +12,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance =>
 );
 
 app.get("/api/houses", mc.getHouses);
+app.post("/api/newhouse", mc.addHouse);
+app.delete("/api/houses/:id", mc.deleteHouse);
 
 const port = 3001;
 app.listen(port, () => {
