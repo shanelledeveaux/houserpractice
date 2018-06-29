@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const initialState = {
   name: "",
   address: "",
@@ -6,7 +8,8 @@ const initialState = {
   zipcode: "",
   imageurl: "",
   mortgage: "",
-  rent: ""
+  rent: "",
+  houses: []
 };
 
 const UPDATE_NAME = "UPDATE_NAME";
@@ -17,6 +20,7 @@ const UPDATE_ZIP = "UPDATE_ZIP";
 const UPDATE_IMAGE = "UPDATE_IMAGE";
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
 const UPDATE_RENT = "UPDATE_RENT";
+const SUBMIT_HOUSE = "SUBMIT_HOUSE";
 
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -43,6 +47,9 @@ function reducer(state = initialState, action) {
 
     case UPDATE_RENT:
       return Object.assign({}, state, { rent: action.payload });
+
+    case SUBMIT_HOUSE:
+      return Object.assign({}, state, { houses: action.payload.data });
 
     default:
       return state;
@@ -104,5 +111,31 @@ export function updateRent(rent) {
   return {
     type: UPDATE_RENT,
     payload: rent
+  };
+}
+
+export function submitHouse(
+  name,
+  address,
+  city,
+  userState,
+  zipcode,
+  imageurl,
+  mortgage,
+  rent
+) {
+  //   console.log(action.payload);
+  return {
+    type: SUBMIT_HOUSE,
+    payload: axios.post("/api/houses", {
+      name,
+      address,
+      city,
+      userState,
+      zipcode,
+      imageurl,
+      mortgage,
+      rent
+    })
   };
 }

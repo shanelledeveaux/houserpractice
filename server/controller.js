@@ -11,11 +11,29 @@ const getHouses = (req, res, next) => {
 
 const addHouse = (req, res, next) => {
   const dbInstance = req.app.get("db");
-  const { name, address, city, userState, zipcode } = req.body;
-  // console.log(req.body);
+  const {
+    name,
+    address,
+    city,
+    userState,
+    zipcode,
+    imageurl,
+    mortgage,
+    rent
+  } = req.body;
+  console.log(req.body);
 
   dbInstance
-    .add_house([name, address, city, userState, zipcode])
+    .add_house([
+      name,
+      address,
+      city,
+      userState,
+      zipcode,
+      imageurl,
+      mortgage,
+      rent
+    ])
     .then(response => res.status(200).send(response))
     .catch(console.log);
 };

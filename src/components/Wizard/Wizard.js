@@ -58,7 +58,7 @@ class Wizard extends Component {
   // };
 
   render() {
-    console.log("WIZARD 1 PROPS", this.props);
+    console.log("WIZARD 1 PROPS", this.props.name);
     const {
       updateName,
       updateAddress,
