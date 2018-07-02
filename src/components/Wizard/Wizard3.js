@@ -16,17 +16,16 @@ import {
 
 class Wizard3 extends Component {
   render() {
-    console.log("WIZARD 3 PROPS", this.props.reducer.name);
+    console.log("WIZARD 3 PROPS", this.props);
     const {
-      updateName,
-      updateAddress,
-      updateCity,
-      updateUserState,
-      updateZip,
-      updateImage,
-      updateMortgage,
-      updateRent,
-      submitHouse
+      name,
+      address,
+      city,
+      userState,
+      zipcode,
+      imageurl,
+      mortgage,
+      rent
     } = this.props;
     return (
       <div className="wizard">
@@ -39,7 +38,22 @@ class Wizard3 extends Component {
           <input onChange={e => updateRent(e.target.value)} />
         </div>
         <Link to="/">
-          <button onClick={e => submitHouse()}>Complete</button>
+          <button
+            onClick={e =>
+              submitHouse(
+                name,
+                address,
+                city,
+                userState,
+                zipcode,
+                imageurl,
+                mortgage,
+                rent
+              )
+            }
+          >
+            Complete
+          </button>
         </Link>
         <Link to="/wizard2">
           <button>Back</button>

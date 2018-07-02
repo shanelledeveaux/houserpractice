@@ -18,4 +18,5 @@
 .homebox {
   overflow: scroll;
   height: 70vh;
+  width: 75vw;
 }

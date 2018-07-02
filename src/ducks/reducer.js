@@ -124,10 +124,10 @@ export function submitHouse(
   mortgage,
   rent
 ) {
-  //   console.log(action.payload);
+  // console.log(action.payload);
   return {
     type: SUBMIT_HOUSE,
-    payload: axios.post("/api/houses", {
+    payload: axios.post("/api/newhouse", {
       name,
       address,
       city,
