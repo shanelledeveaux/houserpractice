@@ -7,8 +7,8 @@ const initialState = {
   userState: "",
   zipcode: "",
   imageurl: "",
-  mortgage: "",
-  rent: "",
+  mortgage: null,
+  rent: null,
   houses: []
 };
 
@@ -49,7 +49,7 @@ function reducer(state = initialState, action) {
       return Object.assign({}, state, { rent: action.payload });
 
     case SUBMIT_HOUSE:
-      return Object.assign({}, state, { houses: action.payload.data });
+      return Object.assign({}, state, { houses: action.payload });
 
     default:
       return state;
@@ -100,19 +100,19 @@ export function updateImage(imageurl) {
   };
 }
 
-export function updateMortgage(mortgage) {
-  return {
-    type: UPDATE_MORTGAGE,
-    payload: mortgage
-  };
-}
+// export function updateMortgage(mortgage) {
+//   return {
+//     type: UPDATE_MORTGAGE,
+//     payload: mortgage
+//   };
+// }
 
-export function updateRent(rent) {
-  return {
-    type: UPDATE_RENT,
-    payload: rent
-  };
-}
+// export function updateRent(rent) {
+//   return {
+//     type: UPDATE_RENT,
+//     payload: rent
+//   };
+// }
 
 export function submitHouse(
   name,
